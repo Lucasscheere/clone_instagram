@@ -15,16 +15,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Clone Instagram',
-      routes: {
-        '/feed': (context) => const FeedPage(),
-        '/profile': (context) => const ProfilePage(),
-      },
       home: const MainPage(),
     );
   }
 }
 
-/// 🔹 Controlador principal — muda as páginas via bottom navigation
+/// 🔹 Controlador principal
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 

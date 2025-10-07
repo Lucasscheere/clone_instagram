@@ -11,10 +11,7 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBarProfile(),
       endDrawer: Drawer(),
       body: Column(
-        children: [
-          Text('Lucas Scheere'),
-          Text('Administração UVA')
-        ],
+        children: [Text('Lucas Scheere'), Text('Administração UVA')],
       ),
     );
   }
