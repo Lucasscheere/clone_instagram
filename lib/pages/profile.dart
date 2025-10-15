@@ -11,16 +11,20 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBarProfile(),
       endDrawer: const Drawer(),
       body: SizedBox(
-        width: double.infinity, // 👈 garante largura total
+        width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(16),
-                  child: Icon(Icons.person, size: 80),
+                  child: CircleAvatar(radius: 30,
+                    backgroundImage: NetworkImage(
+                      'https://pm1.aminoapps.com/6685/a4732eb0ea200d8554265ef7ceb31694eb286f93_128.jpg',
+                    ),
+                  ),
                 ),
                 Expanded(
                   child: Column(
@@ -33,13 +37,39 @@ class ProfilePage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8),
+
+                      // Info posts, follows and followers
+                      const SizedBox(height: 12),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: const [
-                          Text('12 posts'),
-                          Text('100 seguidores'),
-                          Text('150 seguindo'),
+                          Column(
+                            children: [
+                              Text(
+                                '16',
+                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              Text('posts'),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                '100',
+                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              Text('seguidores'),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                '150',
+                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              Text('seguindo'),
+                            ],
+                          ),
                         ],
                       ),
                     ],
@@ -47,12 +77,14 @@ class ProfilePage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+
+            // Info bio
+            const SizedBox(),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text('Administração UVA'),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
 
             // Buttons
             Row(

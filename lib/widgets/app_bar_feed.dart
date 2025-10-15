@@ -27,7 +27,7 @@ class AppBarFeed extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => NotifictionsPage()),
+              MaterialPageRoute(builder: (context) => NotificationsPage()),
             );
           },
         ),
