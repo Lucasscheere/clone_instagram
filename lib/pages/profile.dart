@@ -10,65 +10,42 @@ class ProfilePage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBarProfile(),
       endDrawer: const Drawer(),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
               children: [
-                Padding(
-                  padding: EdgeInsets.all(16),
-                  child: CircleAvatar(radius: 30,
-                    backgroundImage: NetworkImage(
-                      'https://pm1.aminoapps.com/6685/a4732eb0ea200d8554265ef7ceb31694eb286f93_128.jpg',
-                    ),
+                CircleAvatar(
+                  radius: 30,
+                  backgroundImage: NetworkImage(
+                    'https://pm1.aminoapps.com/6685/a4732eb0ea200d8554265ef7ceb31694eb286f93_128.jpg',
                   ),
                 ),
+                SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Lucas Scheere',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      Text('Lucas Scheere', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
+
 
                       // Info posts, follows and followers
-                      const SizedBox(height: 12),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
                           Column(
-                            children: [
-                              Text(
-                                '16',
-                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                              ),
-                              Text('posts'),
-                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [Text('10', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)), Text('publicações')],
                           ),
                           Column(
-                            children: [
-                              Text(
-                                '100',
-                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                              ),
-                              Text('seguidores'),
-                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [Text('150', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)), Text('seguidores')],
                           ),
                           Column(
-                            children: [
-                              Text(
-                                '150',
-                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                              ),
-                              Text('seguindo'),
-                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [Text('250', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)), Text('seguindo')],
                           ),
                         ],
                       ),
@@ -77,50 +54,50 @@ class ProfilePage extends StatelessWidget {
                 ),
               ],
             ),
+          ),
 
-            // Info bio
-            const SizedBox(),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text('Administração UVA'),
-            ),
-            const SizedBox(height: 8),
+          //Info Bio
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('Administração UVA'),
+          ),
 
-            // Buttons
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                FilledButton(
-                  onPressed: () {},
-                  style: FilledButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
+
+
+          //Buttons
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              FilledButton(
+                onPressed: () {},
+                style: FilledButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
-                  child: Text('Editar perfil'),
                 ),
-                FilledButton(
-                  onPressed: () {},
-                  style: FilledButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
+                child: Text('Editar perfil'),
+              ),
+              FilledButton(
+                onPressed: () {},
+                style: FilledButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
-                  child: Text('Compartilhar perfil'),
                 ),
-                FilledButton(
-                  onPressed: () {},
-                  style: FilledButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
+                child: Text('Compartilhar perfil'),
+              ),
+              FilledButton(
+                onPressed: () {},
+                style: FilledButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
-                  child: Icon(Icons.person_add_alt_1_outlined),
                 ),
-              ],
-            ),
-          ],
-        ),
+                child: Icon(Icons.person_add_alt_1_outlined),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
